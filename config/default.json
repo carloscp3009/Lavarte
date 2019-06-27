@@ -1,0 +1,8 @@
+{
+  "dbConfig": {
+    "host": "localhost",
+    "user": "root",
+    "password": "3009",
+    "database": "Lavarte"
+  }
+}
