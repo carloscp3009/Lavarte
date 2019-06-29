@@ -4,5 +4,6 @@
     "user": "root",
     "password": "3009",
     "database": "Lavarte"
-  }
+  },
+  "jwtSecret": "mySecrettoken"
 }

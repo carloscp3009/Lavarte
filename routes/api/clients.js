@@ -1,13 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../config/db');
+const auth = require('../../middlewares/auth');
 
-router.get('/', async (req, res) => {
+// @route   GET api/clients
+// @desc    Get all Clients
+// @access  Private
+router.get('/', auth, async (req, res) => {
   const clients = await db.query('SELECT * FROM Clients');
-  console.log(clients);
   res.json(clients);
 });
-router.post('/register', async (req, res) => {
+
+// @route   POST api/clients
+// @desc    Register new client
+// @access  Private
+router.post('/', auth, async (req, res) => {
   const { id, name, phone, address, birthday } = req.body;
   const newClient = {
     id,

@@ -5,9 +5,9 @@ const app = express();
 
 // settings
 const PORT = process.env.PORT || 5000;
+app.use(express.json({ extended: false }));
 
 // middlewares
-app.use(express.json({ extended: false }));
 
 // routes
 app.use('/api/users', require('./routes/api/users'));
